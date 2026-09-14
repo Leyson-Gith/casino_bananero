@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Supermercat Colombia</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    >
+
+
+    <style>
+
+    /* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    color: #ffffff;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            #0d4937 0%,
+            #06251d 45%,
+            #031812 100%
+        );
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    min-height: 72vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 70px 20px 50px;
+
+    background:
+        radial-gradient(
+            circle at 85% 30%,
+            rgba(0, 201, 139, .12),
+            transparent 35%
+        );
+}
+
+
+.hero-content {
+    width: 100%;
+    max-width: 850px;
+    margin: auto;
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    color: #FFC928;
+
+    font-size: 30px;
+    font-weight: 800;
+
+    margin-bottom: 30px;
+}
+
+.logo i {
+    font-size: 38px;
+    color: #00C98B;
+
+    filter:
+        drop-shadow(
+            4px 5px 4px rgba(0,0,0,.25)
+        );
+}
+
+
+/* =====================================================
+   BIENVENIDA
+===================================================== */
+
+.welcome {
+    color: #00C98B;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    margin-bottom: 15px;
+}
+
+
+/* =====================================================
+   TITULO
+===================================================== */
+
+.hero h1 {
+    font-size:
+        clamp(45px, 8vw, 72px);
+
+    line-height: 1.05;
+
+    color: #FFFFFF;
+
+    margin-bottom: 25px;
+
+    font-weight: 800;
+}
+
+.hero h1 span {
+    display: block;
+
+    color: #FFC928;
+}
+
+
+/* =====================================================
+   DESCRIPCIÓN
+===================================================== */
+
+.description {
+    max-width: 680px;
+
+    margin: auto;
+
+    color: #ffff;
+
+    font-size: 19px;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   BOTÓN VER PRODUCTOS
+===================================================== */
+
+.btn-hero {
+    display: inline-block;
+
+    margin-top: 30px;
+
+    padding: 16px 38px;
+
+    border-radius: 40px;
+
+    text-decoration: none;
+
+    color: #06251D;
+
+    background:
+        linear-gradient(
+            135deg,
+            #FFD43B,
+            #FFC928
+        );
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 0 #B88C00,
+        0 13px 25px rgba(0,0,0,.30);
+
+    transition: .25s;
+}
+
+.btn-hero:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 9px 0 #B88C00,
+        0 17px 28px rgba(0,0,0,.35);
+}
+
+.btn-hero:active {
+    transform: translateY(3px);
+
+    box-shadow:
+        0 3px 0 #B88C00;
+}
+
+
+/* =====================================================
+   CONTACTO
+===================================================== */
+
+.contacto {
+    width: 100%;
+
+    padding: 90px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #073529,
+            #06251D
+        );
+}
+
+
+/* =====================================================
+   CONTENEDOR PRINCIPAL
+===================================================== */
+
+.contact-container {
+    width: 100%;
+    max-width: 1050px;
+
+    margin: auto;
+
+    padding: 55px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(12, 61, 46, .95),
+            rgba(5, 39, 30, .95)
+        );
+
+    backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(0, 201, 139, .18);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.30),
+        0 8px 20px rgba(0,201,139,.06);
+
+    display: grid;
+
+    grid-template-columns: .9fr 1.1fr;
+
+    gap: 60px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   DECORACIÓN
+===================================================== */
+
+.contact-container::before {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(0, 201, 139, .10);
+
+    top: -100px;
+    right: -80px;
+}
+
+.contact-container::after {
+    content: "";
+
+    position: absolute;
+
+    width: 150px;
+    height: 150px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 201, 40, .08);
+
+    bottom: -80px;
+    left: -60px;
+}
+
+
+/* =====================================================
+   INFORMACIÓN
+===================================================== */
+
+.contact-info {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+/* ETIQUETA */
+
+.contact-title {
+    display: inline-block;
+
+    width: fit-content;
+
+    padding: 8px 15px;
+
+    border-radius: 30px;
+
+    color: #06251D;
+
+    background: #00C98B;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    margin-bottom: 18px;
+}
+
+
+/* TITULO CONTACTO */
+
+.contact-info h2 {
+    color: #FFFFFF;
+
+    font-size: 48px;
+
+    line-height: 1.05;
+
+    margin-bottom: 20px;
+
+    font-weight: 800;
+}
+
+
+/* TEXTO */
+
+.contact-info p {
+    color: #ffffff;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   BOTONES
+===================================================== */
+
+.contact-data {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =====================================================
+   BOTÓN CONTACTO
+===================================================== */
+
+.contact-btn {
+    width: 100%;
+
+    min-height: 72px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 17px;
+
+    padding: 12px 18px;
+
+    border-radius: 18px;
+
+    text-decoration: none;
+
+    color: #FFFFFF;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0B3D2E,
+            #092F24
+        );
+
+    border: 1px solid rgba(0, 201, 139, .25);
+
+    box-shadow:
+        0 6px 15px rgba(0,0,0,.18);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease;
+}
+
+
+/* =====================================================
+   ICONO
+===================================================== */
+
+.contact-btn > i:first-child {
+    width: 48px;
+
+    height: 48px;
+
+    min-width: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00D99A,
+            #00A878
+        );
+
+    color: #06251D;
+
+    font-size: 19px;
+
+    box-shadow:
+        0 7px 15px rgba(0,201,139,.22);
+}
+
+
+/* =====================================================
+   TEXTO
+===================================================== */
+
+.contact-btn span {
+    font-size: 16px;
+
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   FLECHA
+===================================================== */
+
+.contact-btn .arrow {
+    margin-left: auto;
+
+    width: 32px;
+
+    height: 32px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(0, 201, 139, .12);
+
+    color: #00D99A;
+
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   HOVER
+===================================================== */
+
+.contact-btn:hover {
+    transform: translateX(7px);
+
+    border-color: #00C98B;
+
+    box-shadow:
+        0 12px 25px rgba(0,201,139,.14);
+}
+
+.contact-btn:hover > i:first-child {
+    transform: scale(1.08);
+}
+
+
+/* =====================================================
+   REDES SOCIALES
+===================================================== */
+
+.social {
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 4px;
+}
+
+
+.social a {
+    width: 46px;
+
+    height: 46px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00C98B,
+            #008F68
+        );
+
+    color: #06251D;
+
+    text-decoration: none;
+
+    font-size: 17px;
+
+    box-shadow:
+        0 7px 15px rgba(0,0,0,.20);
+
+    transition: .3s;
+}
+
+
+.social a:hover {
+    transform:
+        translateY(-5px)
+        rotate(-3deg);
+
+    background:
+        linear-gradient(
+            135deg,
+            #FFD43B,
+            #FFC928
+        );
+
+    box-shadow:
+        0 12px 22px rgba(255,201,40,.20);
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    padding: 25px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #031812,
+            #06251D
+        );
+
+    color: #C2D3CD;
+
+    font-size: 14px;
+
+    border-top:
+        1px solid rgba(0,201,139,.12);
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 850px) {
+
+    .contact-container {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        padding: 40px;
+    }
+
+    .contact-info {
+        text-align: center;
+
+        align-items: center;
+    }
+
+    .contact-info h2 {
+        font-size: 42px;
+    }
+}
+
+
+/* =====================================================
+   CELULAR
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .hero {
+        padding:
+            50px 15px
+            40px;
+    }
+
+    .logo {
+        font-size: 25px;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .description {
+        font-size: 16px;
+    }
+
+    .btn-hero {
+        padding:
+            14px 28px;
+
+        font-size: 16px;
+    }
+
+
+    .contacto {
+        padding: 50px 15px;
+    }
+
+
+    .contact-container {
+        padding: 30px 20px;
+
+        border-radius: 25px;
+
+        gap: 30px;
+    }
+
+
+    .contact-title {
+        font-size: 13px;
+    }
+
+
+    .contact-info h2 {
+        font-size: 34px;
+    }
+
+
+    .contact-info p {
+        font-size: 15px;
+    }
+
+
+    .contact-btn {
+        min-height: 66px;
+
+        padding: 10px 13px;
+
+        border-radius: 15px;
+    }
+
+
+    .contact-btn > i:first-child {
+        width: 43px;
+
+        height: 43px;
+
+        min-width: 43px;
+
+        border-radius: 12px;
+
+        font-size: 17px;
+    }
+
+
+    .contact-btn span {
+        font-size: 14px;
+    }
+
+
+    .contact-btn .arrow {
+        width: 28px;
+
+        height: 28px;
+    }
+
+
+    .social {
+        justify-content: center;
+    }
+}
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+
+<!-- =====================================================
+     PRESENTACIÓN SUPERMERCAT
+===================================================== -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+
+        <!-- LOGO -->
+
+        <div class="logo">
+
+            <i class="fas fa-shopping-basket"></i>
+
+            <span>
+                Supermercat Colombia!
+            </span>
+
+        </div>
+
+
+        <!-- BIENVENIDA -->
+
+        <p class="welcome">
+
+            🛒 Bienvenido a Supermercat
+
+        </p>
+
+
+        <!-- TITULO -->
+
+        <h1>
+
+            Compra fácil,
+
+            <span>
+                rápido y seguro.
+            </span>
+
+        </h1>
+
+
+        <!-- DESCRIPCIÓN -->
+
+        <p class="description">
+
+            Encuentra frutas, verduras, carnes, bebidas,
+            lácteos, panadería y productos marinos
+            en un solo lugar.
+
+            Compra desde cualquier dispositivo de forma
+            rápida, segura y disfruta de nuestros mejores precios.
+
+        </p>
+
+
+        <!-- BOTÓN -->
+
+        <a
+            href="productos.html"
+            class="btn-hero"
+        >
+
+            🛒 Ver Productos
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACTO
+===================================================== -->
+
+<section class="contacto">
+
+    <div class="contact-container">
+
+
+        <!-- INFORMACIÓN -->
+
+        <div class="contact-info">
+
+            <p>
+
+                📞 Estamos para ayudarte
+
+            </p>
+
+
+            <h2>
+
+                Contáctanos
+
+            </h2>
+
+
+            <p>
+
+                ¿Tienes alguna pregunta sobre nuestros
+                productos? Comunícate con nosotros.
+
+                Estamos disponibles para atenderte
+                y ayudarte con tus compras.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- DATOS -->
+
+  
+        <!-- DATOS -->
+<div class="contact-data">
+
+    <!-- TELÉFONO -->
+    <a
+        href="tel:+573000000000"
+        class="contact-btn"
+    >
+        <i class="fas fa-phone"></i>
+
+        <span>
+            Llamar por teléfono
+        </span>
+
+        <i class="fas fa-chevron-right arrow"></i>
+    </a>
+
+
+    <!-- CORREO -->
+    <a
+        href="mailto:contacto@supermercat.com"
+        class="contact-btn"
+    >
+        <i class="fas fa-envelope"></i>
+
+        <span>
+            Enviar correo
+        </span>
+
+        <i class="fas fa-chevron-right arrow"></i>
+    </a>
+
+
+    <!-- REDES SOCIALES -->
+    <div class="social">
+
+        <a href="#" title="Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+
+        <a href="#" title="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+
+        <a
+            href="https://wa.me/573000000000"
+            target="_blank"
+            title="WhatsApp"
+        >
+            <i class="fab fa-whatsapp"></i>
+        </a>
+
+    </div>
+
+</div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <p>
+
+        © 2026 Supermercat Colombia.
+        Todos los derechos reservados.
+
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
